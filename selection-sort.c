@@ -8,15 +8,15 @@ void selection_sort(int *arr, int len)
 {
     for (int i = 0; i < len; i++)
     {
-        int *min = arr + i;
+        int min_idx = i;
 
         for (int j = i + 1; j < len; j++)
         {
-            if (arr[j] < *min)
-                min = arr + j;
+            if (arr[j] < arr[min_idx])
+                min_idx = j;
         }
 
-        if (min != arr + i)
-            swap(min, arr + i);
+        if (arr[min_idx] != arr[i])
+            swap(arr + min_idx, arr + i);
     }
 }
