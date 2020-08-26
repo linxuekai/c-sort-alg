@@ -1,12 +1,10 @@
-#include <stdio.h>
+#include <stdlib.h>
 
 int main2()
 {
-    int a = 1;
-    int *p1 = &a;
-    int *p2 = &a;
-
-    printf("p1 == p2 => %d\n", p1 == p2);
-
-    return 0;
+    int *a = malloc(8);
+    int *b = a;
+    free(b);
+    a[0] = 1;
+    free(a);
 }

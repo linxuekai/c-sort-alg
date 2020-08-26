@@ -3,7 +3,8 @@
 
 // extern void bubble_sort(int *arr, int len);
 // extern void selection_sort(int *arr, int len);
-extern void insertion_sort(int *arr, int len);
+// extern void insertion_sort(int *arr, int len);
+extern int *merge_sort(int *arr, int len);
 
 int main()
 {
@@ -12,7 +13,7 @@ int main()
 
     // bubble_sort(alc_arr, arr_len);
     // selection_sort(alc_arr, arr_len);
-    insertion_sort(alc_arr, arr_len);
+    merge_sort(alc_arr, arr_len);
     print_arr(alc_arr, arr_len);
     free(alc_arr);
 
