@@ -2,7 +2,7 @@
 
 int main2()
 {
-    int *a = malloc(8);
+    int *a = (int *)malloc(8);
     int *b = a;
     free(b);
     a[0] = 1;

@@ -38,8 +38,8 @@ void mergeSort(int *arr, int len)
 
     int leftLen = len / 2;
     int rightLen = len - leftLen;
-    int *left = malloc(sizeof(int) * leftLen);
-    int *right = malloc(sizeof(int) * rightLen);
+    int *left = (int *)malloc(sizeof(int) * leftLen);
+    int *right = (int *)malloc(sizeof(int) * rightLen);
 
     for (int i = 0; i < len; i++)
     {
