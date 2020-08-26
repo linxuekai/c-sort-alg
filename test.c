@@ -1,21 +1,20 @@
 #include <stdlib.h>
 #include "tools.h"
 
-// extern void bubble_sort(int *arr, int len);
-// extern void selection_sort(int *arr, int len);
-// extern void insertion_sort(int *arr, int len);
-extern int *merge_sort(int *arr, int len);
+// extern void bubbleSort(int *arr, int len);
+// extern void selectionSort(int *arr, int len);
+// extern void insertionSort(int *arr, int len);
+// extern int *mergeSort(int *arr, int len);
+extern int *quickSort(int *arr, int len);
 
 int main()
 {
-    const int arr_len = 100;
-    int *alc_arr = gen_random_arr(arr_len, 1, arr_len);
+    const int arrLen = 100;
+    int *alcArr = genRandomArr(arrLen, 1, arrLen);
 
-    // bubble_sort(alc_arr, arr_len);
-    // selection_sort(alc_arr, arr_len);
-    merge_sort(alc_arr, arr_len);
-    print_arr(alc_arr, arr_len);
-    free(alc_arr);
+    quickSort(alcArr, arrLen);
+    printArr(alcArr, arrLen);
+    free(alcArr);
 
     return 0;
 }

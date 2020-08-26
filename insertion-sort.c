@@ -4,7 +4,7 @@
 
 extern void swap(int *a, int *b);
 
-void insertion_sort(int *arr, int len)
+void insertionSort(int *arr, int len)
 {
     for (int i = 0; i < len; i++)
     {

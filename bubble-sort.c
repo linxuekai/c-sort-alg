@@ -4,7 +4,7 @@
 
 #include "tools.h"
 
-void bubble_sort(int *arr, int len)
+void bubbleSort(int *arr, int len)
 {
     for (int i = 0; i < len - 1; i++)
     {

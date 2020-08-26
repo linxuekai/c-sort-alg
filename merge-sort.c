@@ -5,53 +5,53 @@
 #include <stdio.h>
 #include "tools.h"
 
-void merge_arr(int *left, int left_len, int *right, int right_len, int *target)
+void mergeArr(int *left, int leftLen, int *right, int rightLen, int *target)
 {
     int tarIdx = 0;
     int leftIdx = 0;
     int rightIdx = 0;
-    int len = left_len + right_len;
+    int len = leftLen + rightLen;
 
     while (tarIdx < len)
     {
         if (left[leftIdx] <= right[rightIdx])
         {
             target[tarIdx++] = left[leftIdx++];
-            if (leftIdx == left_len)
-                while (rightIdx < right_len)
+            if (leftIdx == leftLen)
+                while (rightIdx < rightLen)
                     target[tarIdx++] = right[rightIdx++];
         }
         else
         {
             target[tarIdx++] = right[rightIdx++];
-            if (rightIdx == right_len)
-                while (leftIdx < left_len)
+            if (rightIdx == rightLen)
+                while (leftIdx < leftLen)
                     target[tarIdx++] = left[leftIdx++];
         }
     }
 }
 
-void merge_sort(int *arr, int len)
+void mergeSort(int *arr, int len)
 {
     if (len < 2)
         return;
 
-    int left_len = len / 2;
-    int right_len = len - left_len;
-    int *left = malloc(sizeof(int) * left_len);
-    int *right = malloc(sizeof(int) * right_len);
+    int leftLen = len / 2;
+    int rightLen = len - leftLen;
+    int *left = malloc(sizeof(int) * leftLen);
+    int *right = malloc(sizeof(int) * rightLen);
 
     for (int i = 0; i < len; i++)
     {
-        if (i < left_len)
+        if (i < leftLen)
             left[i] = arr[i];
         else
-            right[i - left_len] = arr[i];
+            right[i - leftLen] = arr[i];
     }
 
-    merge_sort(left, left_len);
-    merge_sort(right, right_len);
-    merge_arr(left, left_len, right, right_len, arr);
+    mergeSort(left, leftLen);
+    mergeSort(right, rightLen);
+    mergeArr(left, leftLen, right, rightLen, arr);
 
     free(left);
     free(right);
