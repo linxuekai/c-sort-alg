@@ -7,14 +7,15 @@
 // extern void mergeSort(int *arr, int len);
 // extern void quickSort(int *arr, int len);
 // extern void countingSort(int *arr, int len);
-extern void radixSort(int *arr, int len);
+// extern void radixSort(int *arr, int len);
+extern void bucketSort(int *arr, int len);
 
 int main()
 {
-    const int arrLen = 100;
+    const int arrLen = 666;
     int *alcArr = genRandomArr(arrLen, 1, arrLen);
 
-    radixSort(alcArr, arrLen);
+    bucketSort(alcArr, arrLen);
     printArr(alcArr, arrLen);
     free(alcArr);
 

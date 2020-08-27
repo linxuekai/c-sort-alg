@@ -1,11 +1,50 @@
 /**************************************************
                     桶排序
  **************************************************/
+#include <stdlib.h>
+#include <stdio.h>
+#include "link.h"
+#define BUCKETS_COUNT 5
 
 void bucketSort(int *arr, int len)
 {
-    int chunkLen = 10;
-    int arrCount = len / chunkLen + 1;
+    int minItem = arr[0];
+    int maxItem = arr[0];
 
-    int allArr[10][11] = {};
+    for (int i = 1; i < len; i++)
+        if (arr[i] < minItem)
+            minItem = arr[i];
+        else if (arr[i] > maxItem)
+            maxItem = arr[i];
+
+    int step = (maxItem - minItem) / (BUCKETS_COUNT - 1);
+
+    printf("minItem = %d\n", minItem);
+    printf("maxItem = %d\n", maxItem);
+    printf("step = %d\n", step);
+
+    LinkNode *arrBuckets[BUCKETS_COUNT] = {};
+    for (int i = 0; i < BUCKETS_COUNT; i++)
+        arrBuckets[i] = createLink();
+
+    for (int i = 0; i < len; i++)
+    {
+        int bucketIdx = (arr[i] - minItem) / step;
+        LinkNode *pNode = createLinkNode(arr[i]);
+        LinkNode *tarNode = arrBuckets[bucketIdx];
+        while (tarNode->next != NULL && tarNode->next->value < arr[i])
+            tarNode = tarNode->next;
+        linkInsert(tarNode, pNode);
+    }
+
+    int storeIdx = 0;
+    for (int i = 0; i < BUCKETS_COUNT; i++)
+    {
+        LinkNode *pNode = arrBuckets[i];
+        while ((pNode = pNode->next))
+            arr[storeIdx++] = pNode->value;
+    }
+
+    for (int i = 0; i < BUCKETS_COUNT; i++)
+        freeLink(arrBuckets[i]);
 }
