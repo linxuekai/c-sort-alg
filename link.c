@@ -6,6 +6,7 @@ LinkNode *createLink()
 {
     LinkNode *head = malloc(sizeof(int) + sizeof(void *));
     head->next = NULL;
+    return head;
 }
 
 LinkNode *createLinkNode(int value)
@@ -13,6 +14,7 @@ LinkNode *createLinkNode(int value)
     LinkNode *node = malloc(sizeof(int) + sizeof(void *));
     node->value = value;
     node->next = NULL;
+    return node;
 }
 
 void linkAdd(LinkNode *linkHead, LinkNode *newNode)

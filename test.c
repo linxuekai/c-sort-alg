@@ -11,7 +11,7 @@ extern void radixSort(int *arr, int len);
 
 int main()
 {
-    const int arrLen = 1000;
+    const int arrLen = 100;
     int *alcArr = genRandomArr(arrLen, 1, arrLen);
 
     radixSort(alcArr, arrLen);
