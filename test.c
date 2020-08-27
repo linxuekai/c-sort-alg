@@ -4,16 +4,17 @@
 // extern void bubbleSort(int *arr, int len);
 // extern void selectionSort(int *arr, int len);
 // extern void insertionSort(int *arr, int len);
-// extern int *mergeSort(int *arr, int len);
-// extern int *quickSort(int *arr, int len);
-extern int *countingSort(int *arr, int len);
+// extern void mergeSort(int *arr, int len);
+// extern void quickSort(int *arr, int len);
+// extern void countingSort(int *arr, int len);
+extern void radixSort(int *arr, int len);
 
 int main()
 {
-    const int arrLen = 100;
+    const int arrLen = 1000;
     int *alcArr = genRandomArr(arrLen, 1, arrLen);
 
-    countingSort(alcArr, arrLen);
+    radixSort(alcArr, arrLen);
     printArr(alcArr, arrLen);
     free(alcArr);
 

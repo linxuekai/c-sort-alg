@@ -1,10 +1,6 @@
-#include <stdlib.h>
-
+#include "tools.h"
 int main2()
 {
-    int *a = (int *)malloc(8);
-    int *b = a;
-    free(b);
-    a[0] = 1;
-    free(a);
+    int a[10] = {};
+    printArr(a, 10);
 }
