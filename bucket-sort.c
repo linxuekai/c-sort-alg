@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "link.h"
-#define BUCKETS_COUNT 5
+#define BUCKETS_COUNT 665
 
 void bucketSort(int *arr, int len)
 {
@@ -17,7 +17,12 @@ void bucketSort(int *arr, int len)
         else if (arr[i] > maxItem)
             maxItem = arr[i];
 
-    int step = (maxItem - minItem) / (BUCKETS_COUNT - 1);
+    if (!(maxItem > minItem))
+        return;
+
+    int step = (maxItem + 1 - minItem) / BUCKETS_COUNT;
+    if ((maxItem + 1 - minItem) % BUCKETS_COUNT != 0)
+        step += 1;
 
     printf("minItem = %d\n", minItem);
     printf("maxItem = %d\n", maxItem);
