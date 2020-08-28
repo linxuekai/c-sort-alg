@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "link.h"
-#define BUCKETS_COUNT 665
+#define BUCKETS_COUNT 12
 
 void bucketSort(int *arr, int len)
 {

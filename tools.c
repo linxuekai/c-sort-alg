@@ -46,3 +46,15 @@ void printArr(int *arr, int len)
             printf("\n");
     }
 }
+
+int _pow(int num, unsigned int radix)
+{
+    if (radix == 0)
+        return 1;
+
+    int result = 1;
+    while (radix--)
+        result *= num;
+
+    return result;
+}

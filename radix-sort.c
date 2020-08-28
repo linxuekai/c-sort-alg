@@ -6,18 +6,6 @@
 #include "link.h"
 #include "tools.h"
 
-int _pow(int num, unsigned int radix)
-{
-    if (radix == 0)
-        return 1;
-
-    int result = 1;
-    while (radix--)
-        result *= num;
-
-    return result;
-}
-
 void radixSort(int *arr, int len)
 {
     // printArr(arr, len);

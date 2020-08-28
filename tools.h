@@ -13,3 +13,8 @@ extern int *genRandomArr(int len, int min, int max);
  * 打印数组
  * -------------------- */
 extern void printArr(int *arr, int len);
+
+/**
+ * 幂计算
+ * -------------------- */
+int _pow(int num, unsigned int radix);
