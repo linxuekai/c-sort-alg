@@ -9,14 +9,15 @@
 // extern void countingSort(int *arr, int len);
 // extern void radixSort(int *arr, int len);
 // extern void bucketSort(int *arr, int len);
-extern void shellSort(int *arr, int len);
+// extern void shellSort(int *arr, int len);
+extern void heapSort(int *arr, int len);
 
 int main()
 {
     const int arrLen = 88;
     int *alcArr = genRandomArr(arrLen, 1, arrLen * 10);
 
-    shellSort(alcArr, arrLen);
+    heapSort(alcArr, arrLen);
     printArr(alcArr, arrLen);
     free(alcArr);
 
